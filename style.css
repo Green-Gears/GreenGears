@@ -1,3 +1,224 @@
+/* Existing styles ... */
+
+/* Responsive styles */
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        margin: 5px;
+    }
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    .nav-toggle .hamburger {
+        width: 100%;
+        height: 3px;
+        background: #000;
+        border-radius: 2px;
+        transition: all 0.3s linear;
+    }
+    
+    .nav-toggle .hamburger::before,
+    .nav-toggle .hamburger::after {
+        content: '';
+        width: 100%;
+        height: 3px;
+        background: #000;
+        border-radius: 2px;
+        transition: all 0.3s linear;
+        position: relative;
+    }
+
+    .nav-toggle .hamburger::before {
+        transform: translateY(-8px);
+    }
+
+    .nav-toggle .hamburger::after {
+        transform: translateY(8px);
+    }
+
+    .nav-links.nav-links_visible {
+        display: flex;
+    }
+
+    /* Ensure nav is displayed properly */
+    nav {
+        position: fixed;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        top: 0;
+        background-color: #ffffff;
+        border-bottom: 0.5px solid rgb(76, 76, 76);
+    }
+
+    .header {
+        height: auto;
+        min-height: 50vh;
+    }
+    .About, .Team, .Sponsorship, .contact {
+        width: 100%;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    /* Add these styles for the navigation toggle button */
+
+    .nav-links ul li {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .text-box {
+        width: 90%;
+        top: 30%;
+    }
+
+    .text-box h1 {
+        font-size: 28px;
+    }
+
+    .p2, .p1 {
+        font-size: 14px;
+    }
+
+    .alink {
+        left: 50%;
+        width: 70%;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    
+    .Team ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .Team ul li {
+        width: 100%; /* Make each item full width on mobile */
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .Team ul li img {
+        margin-bottom: 10px;
+        width: 120px;
+        height: 150px;
+    }
+    .packages {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .package {
+        /* Ensure each package takes up enough space */
+        box-sizing: border-box;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-right: 10px; /* Add some space between packages */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .header {
+        min-height: 40vh;
+    }
+
+    .text-box h1 {
+        font-size: 22px;
+    }
+
+    .p2, .p1 {
+        font-size: 12px;
+    }
+
+    .alink {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .nav-links ul li a {
+        font-size: 14px;
+    }
+
+    .packages {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: hidden;
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .package {
+        flex: 0 0 300px; /* Ensure each package takes up enough space */
+        box-sizing: border-box;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-right: 10px; /* Add some space between packages */
+    }
+}
+
+/* Add these styles for the navigation toggle button */
+
 *{
     margin: 0;
     padding: 0;
@@ -206,7 +427,7 @@ nav img:hover{
 .Team h1{
     margin-bottom: 70px;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .Team h2 p{
@@ -293,7 +514,10 @@ nav img:hover{
 }
 
 .scrolling-wrapper {
+    display: flex;
     position: relative;
+    align-items: center;
+    left: 7%;
     overflow: auto;
     /*Addscrollbar*/padding: 10px;
     margin: 0 40px 10px;
@@ -305,7 +529,7 @@ nav img:hover{
     display: flex;
     gap: 0px;
     /*Closerspacingbetweenpackages*/padding: 10px 20px;
-    white-space: nowrap;
+    white-space: normal;
     position: relative;
     transition: transform 0.5s ease;
     /*Smoothtransitionforscroll*/transform: translateX(0);
@@ -320,7 +544,7 @@ nav img:hover{
     position: relative;
     background-color: #ffffff;
     /*Whitebackground*/border: 1px solid #006400;
-    /*Darkgreenborder*/border-radius: 25px;
+    /*Darkgreenborder*/border-radius: 15px;
     /*Roundedcorners*/min-width: 250px;
     /*Smallerwidth*/max-width: 250px;
     /*Smallerwidth*/padding: 15px;
@@ -472,6 +696,14 @@ iframe{
     margin: 10px;
     margin-right: 30px;
     font-weight: 200px;
+}
+
+.contact-col div .fab{
+    font-size: 20px;
+    color: #038514;
+    margin: 10px;
+    margin-right: 30px;
+    font-weight: 900;
 }
 
 .contact-col div p{
